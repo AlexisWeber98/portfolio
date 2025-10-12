@@ -24,8 +24,16 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
         </Link>
       </Button>
 
-      <div className="relative h-64 md:h-96 rounded-lg overflow-hidden mb-8">
-        <Image src={post.image || "/placeholder.svg"} alt={post.title[locale]} fill className="object-cover" />
+      <div className="relative h-80 md:h-96 lg:h-[28rem] rounded-lg overflow-hidden mb-8">
+        <Image 
+          src={post.image || "/placeholder.svg"} 
+          alt={post.title[locale]} 
+          fill 
+          className="object-cover object-center" 
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+          quality={90}
+          priority
+        />
       </div>
 
       <header className="mb-8">
