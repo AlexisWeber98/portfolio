@@ -1,9 +1,9 @@
-import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
-import { ExperienceSection } from "@/components/experience-section"
-import { ProjectsSection } from "@/components/projects-section"
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
+import { HeroSection } from "@/components/hero-section";
+import { AboutSection } from "@/components/about-section";
+import { ExperienceSection } from "@/components/experience-section";
+import { ProjectsSection } from "@/components/projects-section";
+//import { ContactSection } from "@/components/contact-section";
+import { Footer } from "@/components/footer";
 
 export default function HomePage() {
   return (
@@ -12,8 +12,8 @@ export default function HomePage() {
       <AboutSection />
       <ExperienceSection />
       <ProjectsSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
       <Footer />
     </main>
-  )
+  );
 }
