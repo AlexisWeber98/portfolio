@@ -1,0 +1,10 @@
+This is a placeholder CV file. Replace this with your actual CV PDF.
+
+To add your real CV:
+1. Create or export your CV as a PDF file
+2. Name it "cv.pdf"
+3. Place it in the /public folder
+4. The download button will automatically use this file
+
+Alternatively, you can use the generate-cv.ts utility to create a dynamic CV
+that pulls data from your experience and projects.
