@@ -1,23 +1,23 @@
 export type BlogPost = {
-  id: string
-  slug: string
+  id: string;
+  slug: string;
   title: {
-    en: string
-    es: string
-  }
+    en: string;
+    es: string;
+  };
   excerpt: {
-    en: string
-    es: string
-  }
+    en: string;
+    es: string;
+  };
   content: {
-    en: string
-    es: string
-  }
-  date: string
-  readTime: number
-  tags: string[]
-  image: string
-}
+    en: string;
+    es: string;
+  };
+  date: string;
+  readTime: number;
+  tags: string[];
+  image: string;
+};
 
 export const blogPosts: BlogPost[] = [
   {
@@ -109,9 +109,9 @@ let sum: i32 = (1..1000)
 // Compiles to the same efficient code as a manual loop
 \`\`\`
 
-## "Rust is Good, Rust is Fast, Don't Touch Python, Forget About It"
+## "Rust is good, Rust is great, we leave slowness, unlike the snake"
 
-*"Rust is good, Rust is fast, don't touch Python, forget about it"* - A playful nod to the classic Simpsons episode where Homer almost joins a cult. But unlike this cult, I'm not trying to show you false promises, but give you the real data so you can understand why this obsession with Rust is actually justified by real performance data.
+*"Rust is good, Rust is great, we leave slowness, unlike the snake"* - A playful nod to the classic Simpsons episode where Homer almost joins a cult. But unlike this cult, I'm not trying to show you false promises, but give you the real data so you can understand why this obsession with Rust is actually justified by real performance data.
 
 **Fibonacci Sequence (n=40) - Execution Time:**
 - **Rust**: ~0.8ms
@@ -460,9 +460,9 @@ let suma: i32 = (1..1000)
 // Se compila al mismo código eficiente que un bucle manual
 \`\`\`
 
-## "Rust es Bueno, Rust es Rápido, No Toques Python, Olvídate de ello"
+## "Rust es bueno, Rust es bello, No Toques Python, Olvídate de ello"
 
-*"Rust es bueno, Rust es rápido, no toques Python, olvídate de ello"* - Un guiño juguetón al episodio clásico de Los Simpsons donde Homero casi entra en una secta. Pero a diferencia de esta secta no pretendo mostrarte promesas falsas, si no darte los datos reales para que puedas entender por qué esta obsesión con Rust está realmente justificada por datos de rendimiento reales.
+*"Rust es bueno, Rust es bello, no toques Python, olvídate de ello"* - Un guiño juguetón al episodio clásico de Los Simpsons donde Homero casi entra en una secta. Pero a diferencia de esta secta no pretendo mostrarte promesas falsas, si no darte los datos reales para que puedas entender por qué esta obsesión con Rust está realmente justificada por datos de rendimiento reales.
 
 **Secuencia de Fibonacci (n=40) - Tiempo de Ejecución:**
 - **Rust**: ~0.8ms
@@ -894,4 +894,4 @@ Seguir estas mejores prácticas te ayudará a escribir código TypeScript más m
     tags: ["TypeScript", "JavaScript", "Best Practices"],
     image: "/blog-typescript.jpg",
   },
-]
+];
