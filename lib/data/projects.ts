@@ -5,8 +5,8 @@ export const projects: Project[] = [
     id: "postulate",
     title: "Postulate",
     description: {
-      en: "Job application platform connecting candidates with opportunities. Features include profile management, application tracking, and real-time notifications.",
-      es: "Plataforma de postulación laboral que conecta candidatos con oportunidades. Incluye gestión de perfiles, seguimiento de aplicaciones y notificaciones en tiempo real.",
+      en: "Management and analysis platform for job search strategy, job application organizer with registration metrics .",
+      es: "Plataforma de gestión y análisis de estrategia de búsqueda laboral, organizador de postulaciones laborales con metricas de registros.",
     },
     image: "/job-application-platform-interface.jpg",
     tags: ["Vite.js", "TypeScript", "PostgreSQL", "Tailwind", "Resend"],
