@@ -60,33 +60,35 @@ export default function BlogPage() {
           </nav>
 
           {/* Blog posts grid */}
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" role="list">
+          <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10" role="list">
             {filteredPosts.map((post) => (
               <li key={post.id}>
                 <article className="h-full">
-                  <Card className="group overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full">
-                    <div className="relative h-48 overflow-hidden bg-muted">
+                  <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full min-h-[600px] max-h-[800px]">
+                    <div className="relative h-80 md:h-96 overflow-hidden bg-muted">
                       <Image
                         src={post.image || "/placeholder.svg"}
                         alt=""
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="object-contain object-center group-hover:scale-105 transition-transform duration-300 p-4"
                         role="presentation"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={85}
                       />
                     </div>
 
-                    <CardHeader>
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground mb-2">
-                        <time className="flex items-center gap-1" dateTime={post.date}>
-                          <Calendar className="h-3 w-3" aria-hidden="true" />
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                        <time className="flex items-center gap-2" dateTime={post.date}>
+                          <Calendar className="h-4 w-4" aria-hidden="true" />
                           {new Date(post.date).toLocaleDateString(locale === "en" ? "en-US" : "es-ES", {
                             year: "numeric",
                             month: "long",
                             day: "numeric",
                           })}
                         </time>
-                        <span className="flex items-center gap-1">
-                          <Clock className="h-3 w-3" aria-hidden="true" />
+                        <span className="flex items-center gap-2">
+                          <Clock className="h-4 w-4" aria-hidden="true" />
                           <span
                             aria-label={`${post.readTime} ${locale === "en" ? "minutes read" : "minutos de lectura"}`}
                           >
@@ -94,30 +96,37 @@ export default function BlogPage() {
                           </span>
                         </span>
                       </div>
-                      <CardTitle className="text-xl md:text-2xl line-clamp-2">
+                      <CardTitle className="text-xl md:text-2xl line-clamp-2 leading-tight">
                         <Link href={`/blog/${post.slug}`} className="hover:text-accent transition-colors">
                           {post.title[locale]}
                         </Link>
                       </CardTitle>
-                      <CardDescription className="line-clamp-3 leading-relaxed">{post.excerpt[locale]}</CardDescription>
                     </CardHeader>
 
-                    <CardContent className="flex-1">
-                      <ul
-                        className="flex flex-wrap gap-2"
-                        aria-label={locale === "en" ? "Post tags" : "Etiquetas del artículo"}
-                      >
-                        {post.tags.map((tag) => (
-                          <li key={tag}>
-                            <span className="px-2 py-1 text-xs font-medium bg-accent/10 text-accent-foreground rounded-full">
-                              {tag}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
+                    <CardContent className="flex-1 flex flex-col pb-4">
+                      <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-muted-foreground/20 scrollbar-track-transparent">
+                        <CardDescription className="text-base leading-relaxed text-muted-foreground mb-4">
+                          {post.excerpt[locale]}
+                        </CardDescription>
+                      </div>
+                      
+                      <div className="mt-4 pt-4 border-t border-border/50">
+                        <ul
+                          className="flex flex-wrap gap-2"
+                          aria-label={locale === "en" ? "Post tags" : "Etiquetas del artículo"}
+                        >
+                          {post.tags.map((tag) => (
+                            <li key={tag}>
+                              <span className="px-3 py-1 text-sm font-medium bg-accent/10 text-accent-foreground rounded-full">
+                                {tag}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </CardContent>
 
-                    <CardFooter>
+                    <CardFooter className="pt-4 border-t border-border/50">
                       <Button
                         variant="ghost"
                         className="w-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors"
