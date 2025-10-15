@@ -11,6 +11,8 @@ export const projects: Project[] = [
     image: "/job-application-platform-interface.jpg",
     tags: ["Vite.js", "TypeScript", "PostgreSQL", "Tailwind", "Resend"],
     link: "https://postulateok.com",
+    githubFrontend: "https://github.com/AlexisWeber98/postulate-client",
+    githubBackend: "https://github.com/AlexisWeber98/postulate-api",
     featured: true,
   },
   {
@@ -32,6 +34,7 @@ export const projects: Project[] = [
     ],
     link: "https://craftbeershop.vercel.app",
     featured: true,
+    github: "https://github.com/AlexisWeber98/CraftBeer_Ale",
   },
   {
     id: "wedding",
@@ -50,7 +53,7 @@ export const projects: Project[] = [
       "AWS Api Gateway",
     ],
     link: "https://aleymar.vercel.app",
-    github: "https://github.com/username/repo",
+    github: "https://github.com/AlexisWeber98/wedding",
     featured: true, // Set to true for featured projects
   },
 ];
