@@ -735,12 +735,14 @@ Los siete años consecutivos de ser el lenguaje más amado no es solo una estad�
 
 El futuro de los sistemas críticos está escrito en Rust, y el momento de aprenderlo es ahora.`,
     },
-    date: "2024-01-15",
+    date: "2025-10-17",
     readTime: 20,
     tags: ["Rust", "Programming", "Systems"],
     image: "/rust-logo.svg",
   },
-  {
+
+  /*
+   * {
     id: "2",
     slug: "modern-css-techniques",
     title: {
@@ -894,4 +896,6 @@ Seguir estas mejores prácticas te ayudará a escribir código TypeScript más m
     tags: ["TypeScript", "JavaScript", "Best Practices"],
     image: "/blog-typescript.jpg",
   },
+
+  */
 ];
