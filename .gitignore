@@ -3,12 +3,15 @@
 # dependencies
 /node_modules
 
-# next.js
+# build output
+/dist
+/.vite-react-ssg-temp
 /.next/
+/build
 /out/
 
-# production
-/build
+# tooling
+/.atl/
 
 # debug
 npm-debug.log*
