@@ -6,7 +6,6 @@ export const PERSONAL_INFO = {
   },
   location: "Buenos Aires, Argentina",
   email: "alexis.weber@mailfence.com",
-  phone: "+54 11 3565 5412",
   linkedin: "https://linkedin.com/in/aleweber",
   github: "https://github.com/alexisweber98",
 } as const
@@ -14,10 +13,6 @@ export const PERSONAL_INFO = {
 export const CERTIFICATIONS = [
   {
     name: "AWS Certified Cloud Practitioner",
-    year: "2025",
-  },
-  {
-    name: "Lean Six Sigma",
     year: "2025",
   },
 ] as const

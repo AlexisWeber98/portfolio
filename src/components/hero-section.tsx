@@ -1,15 +1,11 @@
-import { ArrowDown, Download } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowDown, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/lib/locale-context";
-import { downloadCV } from "@/lib/generate-cv";
 import { PERSONAL_INFO } from "@/lib/constants/personal-info";
 
 export function HeroSection() {
   const { locale, t } = useLocale();
-
-  const handleDownloadCV = () => {
-    void downloadCV(locale);
-  };
 
   return (
     <section
@@ -60,10 +56,12 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               className="w-full sm:w-auto bg-transparent"
-              onClick={handleDownloadCV}
+              asChild
             >
-              <Download className="mr-2 h-4 w-4" aria-hidden="true" />
-              {t.hero.downloadCV}
+              <Link to="/cv">
+                <FileText className="mr-2 h-4 w-4" aria-hidden="true" />
+                {t.hero.downloadCV}
+              </Link>
             </Button>
           </nav>
         </div>

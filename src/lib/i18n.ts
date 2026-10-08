@@ -15,7 +15,15 @@ export const translations = {
       description:
         "I build scalable architectures and innovative solutions with focus on quality, security and best practices.",
       cta: "View My Work",
-      downloadCV: "Download CV",
+      downloadCV: "View CV",
+    },
+    cv: {
+      title: "Curriculum Vitae",
+      description: "Backend developer CV. View it online, open the PDF or download a copy.",
+      download: "Download PDF",
+      open: "Open PDF",
+      alt: "Preview of Alexis Weber's curriculum vitae, first page",
+      languageNote: "Note: the CV is written in Spanish.",
     },
     about: {
       title: "About Me",
@@ -64,7 +72,15 @@ export const translations = {
       description:
         "Construyo arquitecturas escalables y soluciones innovadoras con enfoque en calidad, seguridad y buenas prácticas.",
       cta: "Ver Mi Trabajo",
-      downloadCV: "Descargar CV",
+      downloadCV: "Ver CV",
+    },
+    cv: {
+      title: "Curriculum Vitae",
+      description: "CV de desarrollador backend. Mirá la vista previa, abrí el PDF o descargá una copia.",
+      download: "Descargar PDF",
+      open: "Abrir PDF",
+      alt: "Vista previa del curriculum vitae de Alexis Weber, primera página",
+      languageNote: "",
     },
     about: {
       title: "Sobre Mí",
