@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { BlogImage } from "@/components/blog/blog-image"
 import { Button } from "@/components/ui/button"
 import { useLocale } from "@/lib/locale-context"
 import { getBlogPosts } from "@/lib/content"
@@ -83,16 +84,8 @@ export default function BlogPage() {
           {filteredPosts.map((post) => (
             <li key={post.id}>
               <article className="h-full">
-                <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full min-h-[600px] max-h-[800px]">
-                  <div className="relative h-80 md:h-96 overflow-hidden bg-muted">
-                    <img
-                      src={post.image || "/placeholder.svg"}
-                      alt=""
-                      className="absolute inset-0 w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-300 p-4"
-                      role="presentation"
-                      loading="lazy"
-                    />
-                  </div>
+                <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                  <BlogImage src={post.image} zoomOnHover loading="lazy" />
 
                   <CardHeader className="pb-4">
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">

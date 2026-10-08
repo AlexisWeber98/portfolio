@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { ArrowLeft, Calendar, Clock } from "lucide-react"
+import { BlogImage } from "@/components/blog/blog-image"
 import { Button } from "@/components/ui/button"
 import { useLocale } from "@/lib/locale-context"
 import ReactMarkdown from "react-markdown"
@@ -21,13 +22,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
         </Link>
       </Button>
 
-      <div className="relative h-80 md:h-96 lg:h-[28rem] rounded-lg overflow-hidden mb-8">
-        <img
-          src={post.image || "/placeholder.svg"}
-          alt={post.title[locale]}
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-      </div>
+      <BlogImage src={post.image} alt={post.title[locale]} className="rounded-lg mb-8" />
 
       <header className="mb-8">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
