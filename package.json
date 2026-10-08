@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite-react-ssg build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "cv": "bash scripts/build-cv.sh"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",

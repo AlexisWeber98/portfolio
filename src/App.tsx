@@ -3,6 +3,7 @@ import RootLayout from "@/layout/RootLayout"
 import HomePage, { homeLoader } from "@/pages/HomePage"
 import BlogPage, { blogListLoader } from "@/pages/BlogPage"
 import BlogPostPage, { blogPostLoader } from "@/pages/BlogPostPage"
+import CvPage from "@/pages/CvPage"
 import NotFoundPage from "@/pages/NotFoundPage"
 import { getBlogPosts } from "@/lib/content"
 
@@ -20,6 +21,7 @@ export const routes: RouteRecord[] = [
         // Pre-render one static page per blog slug at build time.
         getStaticPaths: async () => (await getBlogPosts()).map((post) => `blog/${post.slug}`),
       },
+      { path: "cv", element: <CvPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },

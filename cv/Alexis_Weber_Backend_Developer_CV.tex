@@ -1,0 +1,138 @@
+%-------------------------------------------------------------------------------
+% CV - Alexis David Weber
+% Compile with: pdflatex Alexis_Weber_Backend_Developer_CV.tex
+%-------------------------------------------------------------------------------
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hmargin=1.5cm,vmargin=1.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{1F4E79}
+
+% Machine-readable PDF text (ATS friendly)
+\pdfgentounicode=1
+\hypersetup{
+  pdftitle={Alexis David Weber - CV},
+  pdfauthor={Alexis David Weber}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Section headings
+\renewcommand{\section}[2]{%
+  \par\vspace{7pt}%
+  {\large\bfseries\color{accent}#2}\par\vspace{1pt}%
+  {\color{accent}\hrule height 0.6pt}\vspace{4pt}%
+}
+
+% Bullet lists
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=2pt, label=\textbullet}
+
+% \job{Role}{Company / project}{Dates}
+\newcommand{\job}[3]{%
+  \textbf{#1} \hfill {\small #3}\\
+  \textit{#2}%
+}
+
+\begin{document}
+
+%------------------------------- Header -------------------------------
+\begin{center}
+  {\LARGE\bfseries Alexis David Weber}\\[3pt]
+  {\large Desarrollador Backend}\\[6pt]
+  {\small
+    F. Varela -- Buenos Aires, Argentina \quad|\quad
+    \href{mailto:Alexis.Weber@mailfence.com}{Alexis.Weber@mailfence.com}\\[2pt]
+    \href{https://linkedin.com/in/aleweber}{linkedin.com/in/aleweber} \quad|\quad
+    \href{https://github.com/alexisweber98}{github.com/alexisweber98} \quad|\quad
+    \href{https://alexisweber.com}{alexisweber.com}
+  }
+\end{center}
+
+%------------------------------- Profile -------------------------------
+\section*{Perfil Profesional}
+Desarrollador Backend con casi 3 años de experiencia desarrollando APIs,
+microservicios y aplicaciones de alta concurrencia utilizando Java (Spring Boot),
+Node.js y TypeScript. Experiencia en AWS, CI/CD, WebSockets y diseño de
+arquitecturas escalables. Certificado AWS Cloud Practitioner.
+
+%------------------------------- Experience -------------------------------
+\section*{Experiencia Laboral}
+
+\job{Full Stack Developer / DevOps}{FixRiver}{Diciembre 2025 -- Actualidad}
+\begin{itemize}
+  \item Desarrollo backend con Java 21 y Spring Boot para plataformas de gestión y e-learning.
+  \item Integración de servicios como WhatsApp Business API, Bunny y Stripe.
+  \item Administración de infraestructura en AWS (ECS, ALB, CloudFront, S3, IAM) y
+        automatización de despliegues con GitHub Actions.
+  \item Optimización de la infraestructura cloud, reduciendo los costos mensuales de AWS
+        en más de USD 200 mediante la consolidación de los entornos DEV y QA, además de
+        apagado inteligente de servicios.
+\end{itemize}
+
+\vspace{2pt}
+\job{Backend Developer}{Proyecto Freelance: Juego de Truco Online (\href{https://ggtruco.com}{ggtruco.com})}{Octubre 2025 -- Febrero 2026}
+\begin{itemize}
+  \item Desarrollo del backend de un juego de Truco online utilizando Node.js, TypeScript y WebSockets.
+  \item Implementación de nuevas funcionalidades, sistema de referidos y APIs para
+        autenticación y gestión de usuarios.
+  \item Optimización del rendimiento del servidor para soportar múltiples partidas simultáneas.
+\end{itemize}
+
+\vspace{2pt}
+\job{Full Stack Developer}{Proyecto Personal: Postulate (\href{https://postulateok.com}{postulateok.com})}{2024 -- 2025}
+\begin{itemize}
+  \item Plataforma para gestionar y analizar postulaciones laborales con métricas del proceso
+        de búsqueda; la usé en mi propia búsqueda laboral.
+  \item API REST con Node.js, Express, TypeScript y PostgreSQL (JWT, Argon2, rate limiting,
+        Swagger); frontend con Vite y Tailwind, emails con Resend y despliegue con Docker.
+\end{itemize}
+
+\vspace{2pt}
+\job{Backend Developer $\rightarrow$ Team Lead Backend (desde Nov 2024)}{Dazlabs}{Abril 2024 -- Mayo 2025}
+\begin{itemize}
+  \item Liderazgo de un equipo backend de tres desarrolladores para proyectos de videojuegos.
+  \item Automatización de procesos internos reduciendo un 40\% los tiempos de desarrollo.
+  \item Desarrollo de un generador de proyectos en Rust que disminuyó un 80\% el tiempo
+        de configuración inicial.
+  \item Diseño de APIs REST e implementación de soluciones de analítica con Ackee y Matomo.
+\end{itemize}
+
+\vspace{2pt}
+\job{Full Stack Developer / Mobile Developer}{SouthSolutions}{Noviembre 2023 -- Febrero 2025}
+\begin{itemize}
+  \item Desarrollo de aplicaciones web (TypeScript, Next.js, Redux) y móviles (React Native,
+        Expo), con backend en Node.js y PostgreSQL.
+  \item Implementación de buenas prácticas SEO que posicionaron los desarrollos entre la
+        4.ª y 10.ª posición en resultados de búsqueda.
+  \item Despliegue de proyectos en producción con Vercel y Fly.io.
+\end{itemize}
+
+%------------------------------- Skills -------------------------------
+\section*{Tecnologías}
+\begin{itemize}
+  \item \textbf{Lenguajes:} Java · TypeScript · JavaScript · Rust
+  \item \textbf{Backend:} Spring Boot · Spring Security · Node.js · Express · REST APIs ·
+        WebSockets · JWT · Parse Server
+  \item \textbf{Cloud \& DevOps:} AWS · ECS · ALB · CloudFront · S3 · IAM · Docker ·
+        GitHub Actions · CI/CD
+  \item \textbf{Bases de datos:} PostgreSQL · MongoDB · MySQL
+  \item \textbf{Herramientas:} Git · Maven · Jest · Linux
+\end{itemize}
+
+%------------------------------- Education -------------------------------
+% TODO: add degree / institution / dates (in progress is fine)
+% \section*{Educación}
+% \job{Carrera}{Institución}{Año -- Año}
+
+%------------------------------- Certifications -------------------------------
+\section*{Certificaciones e Idiomas}
+AWS Certified Cloud Practitioner (2025) \quad|\quad Español: nativo \quad·\quad Inglés: intermedio (B1)
+
+\end{document}

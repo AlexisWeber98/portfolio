@@ -28,3 +28,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# LaTeX CV build output (published copy lives in public/cv/)
+cv/*.pdf
+cv/*.aux
+cv/*.log
+cv/*.out
