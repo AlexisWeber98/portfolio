@@ -5,7 +5,7 @@ export const PERSONAL_INFO = {
     es: "Desarrollador de Software | AWS Cloud Practitioner",
   },
   location: "Buenos Aires, Argentina",
-  email: "alexis.weber@mailfence.com",
+  email: "contacto@alexisweber.com",
   linkedin: "https://linkedin.com/in/aleweber",
   github: "https://github.com/alexisweber98",
 } as const

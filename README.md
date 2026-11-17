@@ -75,7 +75,7 @@ Para agregar un nuevo proyecto, edita `lib/data/projects.ts`:
 
 ## Contacto
 
-- Email: alexis.weber@mailfence.com
+- Email: contacto@alexisweber.com
 - LinkedIn: [linkedin.com/in/aleweber](https://linkedin.com/in/aleweber)
 - GitHub: [github.com/alexisweber98](https://github.com/alexisweber98)
 # portfolio

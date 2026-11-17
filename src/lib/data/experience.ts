@@ -25,7 +25,7 @@ export const experiences: Experience[] = [
     ],
     period: {
       start: "2025-12",
-      end: "",
+      end: "2026-11",
     },
     technologies: ["Java", "Spring Boot", "PostgreSQL", "Microservices", "Amazon ECS", "Amazon CloudFront", "AWS IAM", "AWS Secrets Manager", "Docker", "GitHub Actions", "Stripe", "WhatsApp"],
     location: "Remote",
