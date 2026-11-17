@@ -54,7 +54,7 @@ Inline route. Trigger evidence: the native `task`/`delegate` tool is not exposed
   - Acceptance: no route lacks canonical + OG title/description/url + Twitter card fields.
   - Checks: `pnpm typecheck`, inspect baked `<head>` on each prerendered page.
 
-- [ ] **T4 — Final verification**
+- [x] **T4 — Final verification**
   - `pnpm typecheck`, full `pnpm build` with a sample `VITE_SITE_URL`, structural checks over all prerendered HTML and generated artifacts.
   - Acceptance: all checks pass; every failed, skipped, or pending check is reported explicitly.
 
@@ -71,7 +71,10 @@ Inline route. Trigger evidence: the native `task`/`delegate` tool is not exposed
 - T2: `pnpm build` exit 0; baked HTML contains `Person` + `WebSite` on `/` and `BlogPosting` (headline, date, author, image, url) on the post. Gotcha fixed: `react-helmet-async` only serializes `<script>` when the JSON is a nested child (mapped to `innerHTML`); `dangerouslySetInnerHTML` produced no tag at all.
 
 - T3: `pnpm build` exit 0; all 4 prerendered pages have canonical + description + og:type/title/description/url/image/image:alt/locale + twitter:card/title/description/image. Post page additionally has `article:published_time`, `article:modified_time`, `article:author` and 3 `article:tag` entries. Added a real 1200x630 PNG social image (rasterized tarjeta palette) instead of pointing og:image at an SVG that crawlers ignore.
+- T4: `pnpm typecheck` exit 0. Build without `VITE_SITE_URL` succeeded, printed the warning, wrote `robots.txt` without a Sitemap directive and skipped `sitemap.xml` / `llms.txt` as designed. Build with `VITE_SITE_URL=https://example.com` succeeded; `sitemap.xml` parsed as valid XML with 4 absolute locs; `llms.txt` has 4 links; both JSON-LD scripts parsed as valid JSON with `Person`+`WebSite` and `BlogPosting`.
+- Skipped: no test runner exists in this repo (`pnpm typecheck` is the quality gate); `pnpm preview` browser-level rendering check not run in this session.
+- Pending: set the real `VITE_SITE_URL` in Vercel so production emits `sitemap.xml` and `llms.txt`.
 
 ## Next step
 
-Start T4: final verification, including the unset-`VITE_SITE_URL` path.
+Feature complete on `feat/seo-discoverability`. Delivery (push/PR/merge) is a user decision; set `VITE_SITE_URL` in Vercel before relying on the generated artifacts.
