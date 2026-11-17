@@ -40,7 +40,7 @@ Inline route. Trigger evidence: the native `task`/`delegate` tool is not exposed
   - Acceptance: `pnpm build` with `VITE_SITE_URL` set produces all three artifacts with one entry per prerendered route; blog slugs appear automatically; without the env the build still succeeds and reports the omission.
   - Checks: `VITE_SITE_URL=https://example.com pnpm build`, inspect `dist/robots.txt`, `dist/sitemap.xml`, `dist/llms.txt`.
 
-- [ ] **T2 — Structured data** (`src/lib/structured-data.ts`, `src/pages/HomePage.tsx`, `src/pages/BlogPostPage.tsx`)
+- [x] **T2 — Structured data** (`src/lib/structured-data.ts`, `src/pages/HomePage.tsx`, `src/pages/BlogPostPage.tsx`)
   - Typed helpers producing `Person`, `WebSite`, and `BlogPosting` JSON-LD with absolute URLs.
   - Inject via `<Head>` using `dangerouslySetInnerHTML`, escaping `<` to avoid script breakout.
   - Acceptance: built HTML for `/` contains `Person` and `WebSite`; built HTML for the post contains `BlogPosting` with headline, date, author, and image.
@@ -68,7 +68,8 @@ Inline route. Trigger evidence: the native `task`/`delegate` tool is not exposed
 
 - T1: `VITE_SITE_URL=https://example.com pnpm build` exit 0; 4 prerendered routes; `dist/robots.txt`, `dist/sitemap.xml`, `dist/llms.txt` present with one absolute `<loc>` per route and blog slug derived automatically. Fixed a regex gap: prerendered `<meta data-rh="true" name="description" ...>` required an attribute-agnostic match so llms.txt includes descriptions.
 - T1 (pending check): verify the unset-`VITE_SITE_URL` warning path on a clean build.
+- T2: `pnpm build` exit 0; baked HTML contains `Person` + `WebSite` on `/` and `BlogPosting` (headline, date, author, image, url) on the post. Gotcha fixed: `react-helmet-async` only serializes `<script>` when the JSON is a nested child (mapped to `innerHTML`); `dangerouslySetInnerHTML` produced no tag at all.
 
 ## Next step
 
-Start T2: typed JSON-LD helpers and injection on Home and BlogPost pages.
+Start T3: fill metadata gaps on Home, Blog list, Blog post and CV pages.
