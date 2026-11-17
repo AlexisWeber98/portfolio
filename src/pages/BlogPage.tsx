@@ -13,6 +13,7 @@ import {
 import { BlogImage } from "@/components/blog/blog-image"
 import { Button } from "@/components/ui/button"
 import { useLocale } from "@/lib/locale-context"
+import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/site"
 import { getBlogPosts } from "@/lib/content"
 import type { BlogPost } from "@/lib/types"
 
@@ -24,6 +25,12 @@ export default function BlogPage() {
   const posts = useLoaderData() as BlogPost[]
   const { locale, t } = useLocale()
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
+  const title = `${t.blog.title} | Portfolio`
+  const description =
+    locale === "en"
+      ? "Thoughts on web development, design, and technology."
+      : "Reflexiones sobre desarrollo web, diseño y tecnología."
+  const ogLocale = locale === "en" ? "en_US" : "es_AR"
 
   const allTags = Array.from(new Set(posts.flatMap((post) => post.tags)))
   const filteredPosts = selectedTag
@@ -33,24 +40,25 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen pt-24 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
       <Head>
-        <title>{`${t.blog.title} | Portfolio`}</title>
-        <meta
-          name="description"
-          content={
-            locale === "en"
-              ? "Thoughts on web development, design, and technology."
-              : "Reflexiones sobre desarrollo web, diseño y tecnología."
-          }
-        />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={absoluteUrl("/blog")} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={absoluteUrl("/blog")} />
+        <meta property="og:image" content={absoluteUrl(DEFAULT_OG_IMAGE)} />
+        <meta property="og:image:alt" content="Alexis Weber — Software Developer" />
+        <meta property="og:locale" content={ogLocale} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={absoluteUrl(DEFAULT_OG_IMAGE)} />
       </Head>
       <div className="container mx-auto max-w-6xl">
         <header className="mb-12 md:mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4">{t.blog.title}</h1>
-          <p className="text-lg md:text-xl text-muted-foreground">
-            {locale === "en"
-              ? "Thoughts on web development, design, and technology."
-              : "Reflexiones sobre desarrollo web, diseño y tecnología."}
-          </p>
+          <p className="text-lg md:text-xl text-muted-foreground">{description}</p>
         </header>
 
         {/* Tag filters */}

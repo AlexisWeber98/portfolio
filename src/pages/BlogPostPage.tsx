@@ -20,18 +20,34 @@ export default function BlogPostPage() {
   // Mirrors Next's notFound(): the URL stays put and 404 content is rendered.
   if (!post) return <NotFoundPage />
 
+  const title = `${post.title[locale]} | Blog`
+  const description = post.excerpt[locale]
+  const url = absoluteUrl(`/blog/${post.slug}`)
+  const ogLocale = locale === "en" ? "en_US" : "es_AR"
+
   return (
     <>
       <Head>
-        <title>{`${post.title[locale]} | Blog`}</title>
-        <meta name="description" content={post.excerpt[locale]} />
-        <link rel="canonical" href={absoluteUrl(`/blog/${post.slug}`)} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={url} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={post.title[locale]} />
-        <meta property="og:description" content={post.excerpt[locale]} />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content={absoluteUrl(post.image)} />
-        <meta property="og:url" content={absoluteUrl(`/blog/${post.slug}`)} />
+        <meta property="og:image:alt" content={post.title[locale]} />
+        <meta property="og:url" content={url} />
+        <meta property="og:locale" content={ogLocale} />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:modified_time" content={post.date} />
+        <meta property="article:author" content={absoluteUrl("/")} />
+        {post.tags.map((tag) => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title[locale]} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={absoluteUrl(post.image)} />
         <script type="application/ld+json">{serializeJsonLd(blogPostingJsonLd(post, locale))}</script>
       </Head>
       <main className="min-h-screen pt-24 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">

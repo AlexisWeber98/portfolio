@@ -46,7 +46,7 @@ Inline route. Trigger evidence: the native `task`/`delegate` tool is not exposed
   - Acceptance: built HTML for `/` contains `Person` and `WebSite`; built HTML for the post contains `BlogPosting` with headline, date, author, and image.
   - Checks: `pnpm typecheck`, `pnpm build`, grep `@type` in `dist/index.html` and `dist/blog/<slug>/index.html`.
 
-- [ ] **T3 — Metadata gaps** (`src/pages/HomePage.tsx`, `src/pages/BlogPage.tsx`, `src/pages/BlogPostPage.tsx`, `src/pages/CvPage.tsx`)
+- [x] **T3 — Metadata gaps** (`src/lib/site.ts`, `public/og-image.png`, `src/pages/HomePage.tsx`, `src/pages/BlogPage.tsx`, `src/pages/BlogPostPage.tsx`, `src/pages/CvPage.tsx`)
   - Home: add `og:image`, `og:locale`, Twitter title/description/image.
   - Blog list: add canonical, `og:type`, `og:title`, `og:description`, `og:url`, `og:image`, `og:locale`, Twitter tags.
   - Blog post: add `article:published_time`, `article:author`, `article:tag`, Twitter title/description/image.
@@ -70,6 +70,8 @@ Inline route. Trigger evidence: the native `task`/`delegate` tool is not exposed
 - T1 (pending check): verify the unset-`VITE_SITE_URL` warning path on a clean build.
 - T2: `pnpm build` exit 0; baked HTML contains `Person` + `WebSite` on `/` and `BlogPosting` (headline, date, author, image, url) on the post. Gotcha fixed: `react-helmet-async` only serializes `<script>` when the JSON is a nested child (mapped to `innerHTML`); `dangerouslySetInnerHTML` produced no tag at all.
 
+- T3: `pnpm build` exit 0; all 4 prerendered pages have canonical + description + og:type/title/description/url/image/image:alt/locale + twitter:card/title/description/image. Post page additionally has `article:published_time`, `article:modified_time`, `article:author` and 3 `article:tag` entries. Added a real 1200x630 PNG social image (rasterized tarjeta palette) instead of pointing og:image at an SVG that crawlers ignore.
+
 ## Next step
 
-Start T3: fill metadata gaps on Home, Blog list, Blog post and CV pages.
+Start T4: final verification, including the unset-`VITE_SITE_URL` path.
