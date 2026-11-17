@@ -4,76 +4,85 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color palette for professional portfolio - deep navy, teal accent, warm neutrals */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Brand palette sourced from tarjeta/tarjeta_alexis_weber_editable.svg */
+  --brand-navy-950: #000b18;
+  --brand-navy-900: #001326;
+  --brand-navy-800: #001a35;
+  --brand-blue-600: #0878e8;
+  --brand-blue-500: #00c7f4;
+  --brand-cyan: #00bdf2;
+  --brand-white: #f7f9fc;
+
+  /* Light theme: off-white surfaces, navy type, palette accents */
+  --background: var(--brand-white);
+  --foreground: var(--brand-navy-900);
+  --card: #ffffff;
+  --card-foreground: var(--brand-navy-900);
+  --popover: #ffffff;
+  --popover-foreground: var(--brand-navy-900);
+  --primary: var(--brand-blue-600);
+  --primary-foreground: #ffffff;
+  --secondary: #e4f2fb;
+  --secondary-foreground: var(--brand-navy-900);
+  --muted: #eaf1f6;
+  --muted-foreground: #43596b;
+  --accent: var(--brand-blue-600);
+  --accent-foreground: #ffffff;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+  --border: #c2d7e6;
+  --input: #c2d7e6;
+  --ring: var(--brand-blue-600);
+  --chart-1: #00c7f4;
+  --chart-2: #0878e8;
+  --chart-3: #001a35;
+  --chart-4: #00bdf2;
+  --chart-5: #0875bd;
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #f0f7fb;
+  --sidebar-foreground: var(--brand-navy-900);
+  --sidebar-primary: var(--brand-blue-600);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e4f2fb;
+  --sidebar-accent-foreground: var(--brand-navy-900);
+  --sidebar-border: #c2d7e6;
+  --sidebar-ring: var(--brand-blue-600);
 }
 
 .dark {
-  /* Dark mode with deep navy background and teal accents */
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  /* Dark theme: the card's deep navy with cyan and electric-blue accents */
+  --background: var(--brand-navy-950);
+  --foreground: var(--brand-white);
+  --card: var(--brand-navy-900);
+  --card-foreground: var(--brand-white);
+  --popover: var(--brand-navy-900);
+  --popover-foreground: var(--brand-white);
+  --primary: var(--brand-cyan);
+  --primary-foreground: var(--brand-navy-950);
+  --secondary: var(--brand-navy-800);
+  --secondary-foreground: var(--brand-white);
+  --muted: #082443;
+  --muted-foreground: #a9c4d6;
+  --accent: var(--brand-blue-500);
+  --accent-foreground: var(--brand-navy-950);
+  --destructive: #f97066;
+  --destructive-foreground: var(--brand-navy-950);
+  --border: #0d4a73;
+  --input: #0d4a73;
+  --ring: var(--brand-blue-500);
+  --chart-1: #00c7f4;
+  --chart-2: #0878e8;
+  --chart-3: #00bdf2;
+  --chart-4: #0875bd;
+  --chart-5: var(--brand-white);
+  --sidebar: var(--brand-navy-900);
+  --sidebar-foreground: var(--brand-white);
+  --sidebar-primary: var(--brand-cyan);
+  --sidebar-primary-foreground: var(--brand-navy-950);
+  --sidebar-accent: var(--brand-navy-800);
+  --sidebar-accent-foreground: var(--brand-white);
+  --sidebar-border: #0d4a73;
+  --sidebar-ring: var(--brand-blue-500);
 }
 
 @theme inline {
@@ -103,6 +112,13 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-brand-navy-950: var(--brand-navy-950);
+  --color-brand-navy-900: var(--brand-navy-900);
+  --color-brand-navy-800: var(--brand-navy-800);
+  --color-brand-blue-600: var(--brand-blue-600);
+  --color-brand-blue-500: var(--brand-blue-500);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-white: var(--brand-white);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -130,26 +146,26 @@
   /* Custom scrollbar styles for blog cards */
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: hsl(var(--muted-foreground) / 0.2) transparent;
+    scrollbar-color: color-mix(in srgb, var(--muted-foreground) 20%, transparent) transparent;
   }
-  
+
   .scrollbar-thin::-webkit-scrollbar {
     width: 6px;
   }
-  
+
   .scrollbar-thin::-webkit-scrollbar-track {
     background: transparent;
   }
-  
+
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: hsl(var(--muted-foreground) / 0.2);
+    background-color: color-mix(in srgb, var(--muted-foreground) 20%, transparent);
     border-radius: 3px;
   }
-  
+
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background-color: hsl(var(--muted-foreground) / 0.3);
+    background-color: color-mix(in srgb, var(--muted-foreground) 30%, transparent);
   }
-  
+
   .scrollbar-track-transparent::-webkit-scrollbar-track {
     background: transparent;
   }
