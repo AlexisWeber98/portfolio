@@ -5,6 +5,7 @@ import { Menu, X, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLocale } from "@/lib/locale-context"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { BrandLogo } from "@/components/brand-logo"
 import { cn } from "@/lib/utils"
 
 // In-page anchors must resolve against the home route, so navigating from
@@ -53,13 +54,16 @@ export function Navigation() {
         aria-label={locale === "en" ? "Main navigation" : "Navegación principal"}
       >
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* Brand */}
           <Link
             to="/"
-            className="text-xl md:text-2xl font-bold text-foreground hover:text-accent transition-colors"
+            className="flex items-center gap-2.5 text-foreground hover:text-accent transition-colors"
             aria-label={locale === "en" ? "Go to homepage" : "Ir a la página principal"}
           >
-            Portfolio
+            <BrandLogo className="h-7 w-auto md:h-8 shrink-0" />
+            <span className="hidden sm:inline text-xl md:text-2xl font-bold tracking-tight">
+              Alexis <span className="text-brand-cyan">Weber</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

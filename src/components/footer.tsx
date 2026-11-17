@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react"
 import { useLocale } from "@/lib/locale-context"
 import { PERSONAL_INFO } from "@/lib/constants/personal-info"
+import { BrandLogo } from "@/components/brand-logo"
 
 export function Footer() {
   const { t } = useLocale()
@@ -16,6 +17,7 @@ export function Footer() {
     <footer className="border-t border-border bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="flex flex-col items-center gap-6">
+          <BrandLogo className="h-8 w-auto text-foreground" aria-hidden />
           <div className="flex items-center gap-6">
             {socialLinks.map((link) => (
               <a
