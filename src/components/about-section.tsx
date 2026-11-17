@@ -13,8 +13,8 @@ export function AboutSection({
   const { locale, t } = useLocale()
 
   const aboutText = {
-    en: "Software Developer with 2+ years of experience in scalable architectures, specialized in Node.js, microservices and AWS. Certified as AWS Cloud Practitioner, with success in performance optimization (up to 40% in MongoDB) and technical team leadership. Oriented to innovative solutions with focus on quality, security and best practices (SOLID, Clean Code).",
-    es: "Desarrollador de Software con 2+ años de experiencia en arquitecturas escalables, especializado en Node.js, microservicios y AWS. Certificado como AWS Cloud Practitioner, con éxito en la optimización de rendimiento (hasta 40% en MongoDB) y liderazgo de equipos técnicos. Orientado a soluciones innovadoras con enfoque en calidad, seguridad y buenas prácticas (SOLID, Clean Code).",
+    en: "Software Developer with 3+ years of experience in scalable architectures, specialized in Node.js, microservices and AWS. Certified as AWS Cloud Practitioner, with success in performance optimization (up to 40% in MongoDB) and technical team leadership. Oriented to innovative solutions with focus on quality, security and best practices (SOLID, Clean Code).",
+    es: "Desarrollador de Software con 3+ años de experiencia en arquitecturas escalables, especializado en Node.js, microservicios y AWS. Certificado como AWS Cloud Practitioner, con éxito en la optimización de rendimiento (hasta 40% en MongoDB) y liderazgo de equipos técnicos. Orientado a soluciones innovadoras con enfoque en calidad, seguridad y buenas prácticas (SOLID, Clean Code).",
   }
 
   return (

@@ -18,11 +18,11 @@ export const CERTIFICATIONS = [
 ] as const
 
 export const SKILLS = {
-  languages: ["JavaScript", "TypeScript", "Rust (principiante)", "C# .NET (principiante)"],
-  backend: ["Node.js", "Express", "Parse Server", "Sequelize"],
+  languages: ["JavaScript", "TypeScript", "Rust (principiante)"],
+  backend: ["Spring-boot", "Node.js", "Express", "Parse Server", "Sequelize"],
   databases: ["PostgreSQL", "MongoDB", "SQL"],
   frontend: ["React", "Next.js", "Redux", "Tailwind", "Vite"],
-  tools: ["Git", "Docker", "Gitea", "Linux"],
-  cloud: ["Vercel", "Fly.io", "AWS"],
+  tools: ["Git", "Docker", "Gitea", "Linux", "Claude Code", "Codex"],
+  cloud: ["Vercel", "Fly.io", "AWS", "Hostinguer"],
   methodologies: ["Scrum", "Agile"],
 } as const
