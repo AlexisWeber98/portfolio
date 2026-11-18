@@ -50,7 +50,7 @@ export default function BlogPostPage() {
         <meta name="twitter:image" content={socialImageUrl(post.image)} />
         <script type="application/ld+json">{serializeJsonLd(blogPostingJsonLd(post, locale))}</script>
       </Head>
-      <main className="min-h-screen pt-24 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <main id="main-content" tabIndex={-1} className="focus:outline-none min-h-screen pt-24 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <BlogPostContent post={post} />
       </main>
     </>

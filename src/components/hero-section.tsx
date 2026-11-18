@@ -36,12 +36,7 @@ export function HeroSection() {
             {t.hero.description}
           </p>
 
-          <nav
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-600"
-            aria-label={
-              locale === "en" ? "Hero actions" : "Acciones principales"
-            }
-          >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-600">
             <Button
               size="lg"
               className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground"
@@ -63,7 +58,7 @@ export function HeroSection() {
                 {t.hero.downloadCV}
               </Link>
             </Button>
-          </nav>
+          </div>
         </div>
       </div>
 

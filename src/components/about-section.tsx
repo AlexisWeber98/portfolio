@@ -18,9 +18,9 @@ export function AboutSection({
   }
 
   return (
-    <section id="about" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8" aria-labelledby="about-heading">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-8 md:mb-12">{t.about.title}</h2>
+        <h2 id="about-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-8 md:mb-12">{t.about.title}</h2>
 
         <div className="space-y-6">
           <Card className="p-6 md:p-8 bg-card border-border">
