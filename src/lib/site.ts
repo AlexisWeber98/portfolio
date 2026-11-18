@@ -3,7 +3,7 @@
  *
  * Social link-preview crawlers (LinkedIn, X, WhatsApp, Slack) require ABSOLUTE
  * og:image / og:url values. Set VITE_SITE_URL in the Vercel project env (e.g.
- * https://your-domain.com) so the prerendered HTML emits absolute URLs. When
+ * https://alexisweber.com, Production only) so the prerendered HTML emits absolute URLs. When
  * unset (local builds), URLs fall back to relative paths.
  */
 export const SITE_URL = (import.meta.env.VITE_SITE_URL ?? "").replace(/\/$/, "")
