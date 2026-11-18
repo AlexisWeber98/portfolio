@@ -8,7 +8,6 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card"
 import { BlogImage } from "@/components/blog/blog-image"
 import { Button } from "@/components/ui/button"
@@ -38,7 +37,7 @@ export default function BlogPage() {
     : posts
 
   return (
-    <main className="min-h-screen pt-24 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <main id="main-content" tabIndex={-1} className="focus:outline-none min-h-screen pt-24 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -114,11 +113,11 @@ export default function BlogPage() {
                         </span>
                       </span>
                     </div>
-                    <CardTitle className="text-xl md:text-2xl line-clamp-2 leading-tight">
+                    <h2 className="font-semibold text-xl md:text-2xl line-clamp-2 leading-tight">
                       <Link to={`/blog/${post.slug}`} className="hover:text-accent transition-colors">
                         {post.title[locale]}
                       </Link>
-                    </CardTitle>
+                    </h2>
                   </CardHeader>
 
                   <CardContent className="flex-1 flex flex-col pb-4">

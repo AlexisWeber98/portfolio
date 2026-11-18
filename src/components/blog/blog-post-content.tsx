@@ -22,7 +22,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
         </Link>
       </Button>
 
-      <BlogImage src={post.image} alt={post.title[locale]} className="rounded-lg mb-8" />
+      <BlogImage src={post.image} alt="" className="rounded-lg mb-8" />
 
       <header className="mb-8">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">

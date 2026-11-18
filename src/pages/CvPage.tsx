@@ -13,7 +13,7 @@ export default function CvPage() {
   const ogLocale = locale === "en" ? "en_US" : "es_AR"
 
   return (
-    <main className="min-h-screen pt-24 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <main id="main-content" tabIndex={-1} className="focus:outline-none min-h-screen pt-24 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
       <Head>
         <title>{title}</title>
         <meta name="description" content={t.cv.description} />

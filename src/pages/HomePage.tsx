@@ -33,7 +33,7 @@ export default function HomePage() {
     "Alexis Weber, Software Developer based in Buenos Aires, specialized in Node.js, TypeScript, microservices and AWS. Projects, experience and blog."
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" tabIndex={-1} className="focus:outline-none min-h-screen">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />

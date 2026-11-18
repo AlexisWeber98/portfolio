@@ -7,7 +7,7 @@ export default function NotFoundPage() {
   const { locale } = useLocale()
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center gap-6 px-4 text-center">
+    <main id="main-content" tabIndex={-1} className="focus:outline-none min-h-screen flex flex-col items-center justify-center gap-6 px-4 text-center">
       <Head>
         <title>404 — Not Found | Portfolio</title>
         <meta name="robots" content="noindex" />
