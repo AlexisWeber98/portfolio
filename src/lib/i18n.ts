@@ -19,7 +19,7 @@ export const translations = {
     },
     cv: {
       title: "Curriculum Vitae",
-      description: "Backend developer CV. View it online, open the PDF or download a copy.",
+      description: "Software developer CV. View it online, open the PDF or download a copy.",
       download: "Download PDF",
       open: "Open PDF",
       alt: "Preview of Alexis Weber's curriculum vitae, first page",
@@ -76,7 +76,7 @@ export const translations = {
     },
     cv: {
       title: "Curriculum Vitae",
-      description: "CV de desarrollador backend. Mirá la vista previa, abrí el PDF o descargá una copia.",
+      description: "CV de desarrollador de software. Mirá la vista previa, abrí el PDF o descargá una copia.",
       download: "Descargar PDF",
       open: "Abrir PDF",
       alt: "Vista previa del curriculum vitae de Alexis Weber, primera página",

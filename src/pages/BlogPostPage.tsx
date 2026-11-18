@@ -2,7 +2,7 @@ import type { LoaderFunctionArgs } from "react-router-dom"
 import { useLoaderData } from "react-router-dom"
 import { Head } from "vite-react-ssg"
 import { getBlogPost } from "@/lib/content"
-import { absoluteUrl } from "@/lib/site"
+import { absoluteUrl, socialImageUrl } from "@/lib/site"
 import { blogPostingJsonLd, serializeJsonLd } from "@/lib/structured-data"
 import { BlogPostContent } from "@/components/blog/blog-post-content"
 import NotFoundPage from "@/pages/NotFoundPage"
@@ -34,7 +34,7 @@ export default function BlogPostPage() {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={post.title[locale]} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={absoluteUrl(post.image)} />
+        <meta property="og:image" content={socialImageUrl(post.image)} />
         <meta property="og:image:alt" content={post.title[locale]} />
         <meta property="og:url" content={url} />
         <meta property="og:locale" content={ogLocale} />
@@ -47,7 +47,7 @@ export default function BlogPostPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title[locale]} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={absoluteUrl(post.image)} />
+        <meta name="twitter:image" content={socialImageUrl(post.image)} />
         <script type="application/ld+json">{serializeJsonLd(blogPostingJsonLd(post, locale))}</script>
       </Head>
       <main className="min-h-screen pt-24 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
