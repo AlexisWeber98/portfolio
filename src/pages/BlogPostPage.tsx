@@ -20,7 +20,7 @@ export default function BlogPostPage() {
   // Mirrors Next's notFound(): the URL stays put and 404 content is rendered.
   if (!post) return <NotFoundPage />
 
-  const title = `${post.title[locale]} | Blog`
+  const title = `${post.title[locale]} | Alexis Weber`
   const description = post.excerpt[locale]
   const url = absoluteUrl(`/blog/${post.slug}`)
   const ogLocale = locale === "en" ? "en_US" : "es_AR"
