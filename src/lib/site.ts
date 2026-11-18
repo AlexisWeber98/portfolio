@@ -8,6 +8,9 @@
  */
 export const SITE_URL = (import.meta.env.VITE_SITE_URL ?? "").replace(/\/$/, "")
 
+/** Default social-preview image (1200x630) shared by routes without their own artwork. */
+export const DEFAULT_OG_IMAGE = "/og-image.png"
+
 export function absoluteUrl(path = ""): string {
   if (/^https?:\/\//.test(path)) return path
   if (!path) return SITE_URL

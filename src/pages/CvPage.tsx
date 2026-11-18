@@ -8,8 +8,9 @@ const CV_PDF = "/cv/alexis-weber-cv.pdf"
 const CV_PREVIEW = "/cv/alexis-weber-cv.png"
 
 export default function CvPage() {
-  const { t } = useLocale()
+  const { locale, t } = useLocale()
   const title = `${t.cv.title} | Alexis Weber`
+  const ogLocale = locale === "en" ? "en_US" : "es_AR"
 
   return (
     <main className="min-h-screen pt-24 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -22,6 +23,8 @@ export default function CvPage() {
         <meta property="og:description" content={t.cv.description} />
         <meta property="og:url" content={absoluteUrl("/cv")} />
         <meta property="og:image" content={absoluteUrl(CV_PREVIEW)} />
+        <meta property="og:image:alt" content="Alexis Weber — Curriculum Vitae" />
+        <meta property="og:locale" content={ogLocale} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={t.cv.description} />

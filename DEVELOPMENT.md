@@ -81,7 +81,18 @@ The `class` strategy is wired (`next-themes` in `RootLayout`). Color tokens are 
 2. Register it in `src/App.tsx` under the `RootLayout` children: `{ path: "my-path", element: <MyPage />, loader: myLoader }`.
 3. For SEO, render `<Head>` (from `vite-react-ssg`) inside the page with `<title>` / `<meta>` / canonical.
 4. If the route is dynamic (`my-path/:id`), add `getStaticPaths` to its route entry so it prerenders.
+5. No manual sitemap edit is needed: `scripts/generate-seo.mjs` derives `sitemap.xml` and `llms.txt` from the generated static pages at build time.
+
+## SEO artifacts
+
+`pnpm build` generates three crawler-facing files in `dist` after prerendering:
+
+- `robots.txt` — allows all crawlers (including GPTBot, ClaudeBot and PerplexityBot) and points to the sitemap.
+- `sitemap.xml` — one absolute `<loc>` per prerendered route, derived from `dist/**/index.html`.
+- `llms.txt` — a compact, link-first site summary for LLM crawlers, also derived from the prerendered pages.
+
+`sitemap.xml` and `llms.txt` require absolute URLs, so they are **skipped when `VITE_SITE_URL` is unset**. The build still succeeds and prints a warning; `robots.txt` is always written. Configure `VITE_SITE_URL` in Vercel (and in any other production environment) to enable them. The script never invents a domain.
 
 ## Deploy to Vercel
 
-First time: import the repo, set **Framework Preset = Vite**, **Output = `dist`** (Build = `pnpm build`, install auto-detected). Add env var **`VITE_SITE_URL`** = your production URL (e.g. `https://your-domain.com`) so social previews use absolute URLs. Each PR gets a Vercel preview deploy automatically; `vercel.json` is already in the repo. To add a contact backend later, see `MIGRATION.md`.
+First time: import the repo, set **Framework Preset = Vite**, **Output = `dist`** (Build = `pnpm build`, install auto-detected). Add env var **`VITE_SITE_URL`** = your production URL (e.g. `https://your-domain.com`) so social previews use absolute URLs and the build emits `sitemap.xml` + `llms.txt` (see **SEO artifacts** above). Each PR gets a Vercel preview deploy automatically; `vercel.json` is already in the repo. To add a contact backend later, see `MIGRATION.md`.

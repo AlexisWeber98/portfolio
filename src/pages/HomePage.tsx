@@ -3,7 +3,8 @@ import { Head } from "vite-react-ssg"
 import type { Experience, Project } from "@/lib/types"
 import type { SiteProfile } from "@/lib/content"
 import { getExperiences, getProfile, getProjects } from "@/lib/content"
-import { absoluteUrl } from "@/lib/site"
+import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/site"
+import { personJsonLd, serializeJsonLd, webSiteJsonLd } from "@/lib/structured-data"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { ExperienceSection } from "@/components/experience-section"
@@ -40,7 +41,14 @@ export default function HomePage() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={absoluteUrl("/")} />
+        <meta property="og:image" content={absoluteUrl(DEFAULT_OG_IMAGE)} />
+        <meta property="og:image:alt" content="Alexis Weber — Software Developer" />
+        <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={absoluteUrl(DEFAULT_OG_IMAGE)} />
+        <script type="application/ld+json">{serializeJsonLd([personJsonLd(), webSiteJsonLd()])}</script>
       </Head>
       <HeroSection />
       <AboutSection certifications={profile.certifications} skills={profile.skills} />
