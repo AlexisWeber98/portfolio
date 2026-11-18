@@ -28,8 +28,9 @@ export async function homeLoader(): Promise<HomeLoaderData> {
 export default function HomePage() {
   const { profile, experiences, projects } = useLoaderData() as HomeLoaderData
 
-  const title = "Portfolio | Full Stack Developer"
-  const description = "Personal portfolio showcasing projects, experience, and blog posts"
+  const title = "Alexis Weber — Software Developer"
+  const description =
+    "Alexis Weber, Software Developer based in Buenos Aires, specialized in Node.js, TypeScript, microservices and AWS. Projects, experience and blog."
 
   return (
     <main className="min-h-screen">

@@ -25,7 +25,7 @@ export default function BlogPage() {
   const posts = useLoaderData() as BlogPost[]
   const { locale, t } = useLocale()
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
-  const title = `${t.blog.title} | Portfolio`
+  const title = `${t.blog.title} | Alexis Weber`
   const description =
     locale === "en"
       ? "Thoughts on web development, design, and technology."
