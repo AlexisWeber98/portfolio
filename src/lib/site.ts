@@ -16,3 +16,11 @@ export function absoluteUrl(path = ""): string {
   if (!path) return SITE_URL
   return `${SITE_URL}${path.startsWith("/") ? "" : "/"}${path}`
 }
+
+/**
+ * Social crawlers (LinkedIn, X, WhatsApp, Slack) ignore SVG previews, so vector
+ * artwork falls back to the shared raster image.
+ */
+export function socialImageUrl(path: string): string {
+  return absoluteUrl(/\.svg$/i.test(path) ? DEFAULT_OG_IMAGE : path)
+}

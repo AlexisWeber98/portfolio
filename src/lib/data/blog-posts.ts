@@ -13,9 +13,7 @@ export const blogPosts: BlogPost[] = [
       es: "Conoce el lenguaje más amado por los desarrolladores durante siete años consecutivos, desde 2016 hasta 2022, según la encuesta anual de Stack Overflow. Un lenguaje tan poderoso como eficiente y seguro y por qué el futuro de los sistemas críticos está en este lenguaje.",
     },
     content: {
-      en: `# Rust: A Language to Rule Them All
-
-Rust has been the most loved programming language by developers for seven consecutive years (2016-2022) according to the annual Stack Overflow survey. This isn't just a coincidence - Rust represents a paradigm shift in systems programming, offering the performance of C++ with the memory safety of higher-level languages.
+      en: `Rust has been the most loved programming language by developers for seven consecutive years (2016-2022) according to the annual Stack Overflow survey. This isn't just a coincidence - Rust represents a paradigm shift in systems programming, offering the performance of C++ with the memory safety of higher-level languages.
 
 ## Why Rust Matters
 
@@ -364,9 +362,7 @@ Rust represents the future of systems programming. Its combination of performanc
 The seven consecutive years of being the most loved language isn't just a statistic - it's a testament to Rust's ability to solve real problems that developers face every day. Whether you're building a web application, a game engine, or an operating system, Rust provides the tools to do it safely and efficiently.
 
 The future of critical systems is written in Rust, and the time to learn it is now.`,
-      es: `# Rust: Un Lenguaje para Gobernarlos a Todos
-
-Rust ha sido el lenguaje de programación más amado por los desarrolladores durante siete años consecutivos (2016-2022) según la encuesta anual de Stack Overflow. Esto no es una coincidencia - Rust representa un cambio de paradigma en la programación de sistemas, ofreciendo el rendimiento de C++ con la seguridad de memoria de lenguajes de alto nivel.
+      es: `Rust ha sido el lenguaje de programación más amado por los desarrolladores durante siete años consecutivos (2016-2022) según la encuesta anual de Stack Overflow. Esto no es una coincidencia - Rust representa un cambio de paradigma en la programación de sistemas, ofreciendo el rendimiento de C++ con la seguridad de memoria de lenguajes de alto nivel.
 
 ## Por Qué Rust Importa
 

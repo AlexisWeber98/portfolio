@@ -1,5 +1,5 @@
 import { PERSONAL_INFO } from "@/lib/constants/personal-info"
-import { absoluteUrl } from "@/lib/site"
+import { absoluteUrl, socialImageUrl } from "@/lib/site"
 import type { BlogPost } from "@/lib/types"
 
 type Schema = Record<string, unknown>
@@ -53,7 +53,7 @@ export function blogPostingJsonLd(post: BlogPost, locale: "en" | "es"): Schema {
     "@type": "BlogPosting",
     headline: post.title[locale],
     description: post.excerpt[locale],
-    image: absoluteUrl(post.image),
+    image: socialImageUrl(post.image),
     datePublished: post.date,
     dateModified: post.date,
     author,
