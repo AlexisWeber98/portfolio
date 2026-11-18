@@ -95,4 +95,4 @@ The `class` strategy is wired (`next-themes` in `RootLayout`). Color tokens are 
 
 ## Deploy to Vercel
 
-First time: import the repo, set **Framework Preset = Vite**, **Output = `dist`** (Build = `pnpm build`, install auto-detected). Add env var **`VITE_SITE_URL`** = your production URL (e.g. `https://your-domain.com`) so social previews use absolute URLs and the build emits `sitemap.xml` + `llms.txt` (see **SEO artifacts** above). Each PR gets a Vercel preview deploy automatically; `vercel.json` is already in the repo. To add a contact backend later, see `MIGRATION.md`.
+First time: import the repo, set **Framework Preset = Vite**, **Output = `dist`** (Build = `pnpm build`, install auto-detected). Add env var **`VITE_SITE_URL`** = your production URL (`https://alexisweber.com`, Production environment only — preview deploys must not claim the production canonical) so social previews use absolute URLs and the build emits `sitemap.xml` + `llms.txt` (see **SEO artifacts** above). Each PR gets a Vercel preview deploy automatically; `vercel.json` is already in the repo. To add a contact backend later, see `MIGRATION.md`.
