@@ -8,6 +8,9 @@ export const PERSONAL_INFO = {
   email: "contacto@alexisweber.com",
   linkedin: "https://linkedin.com/in/aleweber",
   github: "https://github.com/alexisweber98",
+  gitlab: "https://gitlab.com/AleWeb",
+  /** Name variants people search for; exposed as schema.org `alternateName`. */
+  alternateNames: ["Alexis Weber", "alexisweber", "Ale Weber"],
 } as const
 
 export const CERTIFICATIONS = [
