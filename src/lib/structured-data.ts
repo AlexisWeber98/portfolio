@@ -17,6 +17,7 @@ export function personJsonLd(): Schema {
     "@context": "https://schema.org",
     "@type": "Person",
     name: PERSONAL_INFO.name,
+    alternateName: [...PERSONAL_INFO.alternateNames],
     url: absoluteUrl("/"),
     jobTitle: PERSONAL_INFO.title.en,
     email: `mailto:${PERSONAL_INFO.email}`,
@@ -25,7 +26,7 @@ export function personJsonLd(): Schema {
       addressLocality: "Buenos Aires",
       addressCountry: "AR",
     },
-    sameAs: [PERSONAL_INFO.linkedin, PERSONAL_INFO.github],
+    sameAs: [PERSONAL_INFO.linkedin, PERSONAL_INFO.github, PERSONAL_INFO.gitlab],
     knowsAbout: ["Software Development", "TypeScript", "React", "Node.js", "Rust"],
   }
 }
